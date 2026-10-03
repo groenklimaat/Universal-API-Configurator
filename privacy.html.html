@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔒 Privacy Statement — Universal API Monitor</title>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg,
+                #0f172a 0%, #1e293b 25%, #4c1d95 50%,
+                #7c3aed 75%, #ec4899 100%);
+    background-size: 300% 300%;
+    animation: bgShift 20s ease infinite;
+    margin: 0; padding: 24px 16px; min-height: 100vh;
+    color: #e2e8f0; line-height: 1.7;
+  }
+  @keyframes bgShift {
+    0%   { background-position:   0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position:   0% 50%; }
+  }
+  .card {
+    max-width: 780px; margin: 0 auto;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(16px);
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(124, 58, 237, 0.4);
+    padding: 32px;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  .card::before {
+    content: "";
+    position: absolute; inset: -2px; z-index: -1;
+    border-radius: 24px;
+    background: linear-gradient(135deg,
+      #7c3aed, #ec4899, #06b6d4, #facc15, #7c3aed);
+    background-size: 300% 300%;
+    animation: bgShift 8s linear infinite;
+  }
+  h1 {
+    font-size: 26px; margin: 0 0 8px;
+    background: linear-gradient(90deg, #a78bfa, #ec4899, #06b6d4, #facc15);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; background-size: 200% auto;
+    animation: bgShift 6s linear infinite;
+  }
+  .updated { color: #94a3b8; font-size: 13px; margin-bottom: 24px; }
+  h2 {
+    font-size: 18px; margin: 28px 0 10px;
+    color: #c4b5fd; display: flex; align-items: center; gap: 8px;
+  }
+  p, li { color: #cbd5e1; font-size: 15px; }
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; }
+  a { color: #a78bfa; text-decoration: none; font-weight: 700; }
+  a:hover { text-decoration: underline; }
+  code {
+    background: #1e293b; padding: 2px 8px; border-radius: 6px;
+    font-family: ui-monospace, monospace; font-size: 13px;
+    color: #67e8f9;
+  }
+  .highlight {
+    background: linear-gradient(90deg, #064e3b, #065f46);
+    border-left: 6px solid #10b981;
+    padding: 14px 18px; border-radius: 12px;
+    margin: 20px 0; color: #a7f3d0;
+  }
+  .back {
+    display: inline-block; margin-top: 28px;
+    padding: 12px 22px; border-radius: 12px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: #fff; font-weight: 800; text-decoration: none;
+    box-shadow: 0 10px 22px rgba(124, 58, 237, 0.4);
+    transition: transform .15s;
+  }
+  .back:hover { transform: translateY(-2px); text-decoration: none; }
+  hr { border: none; border-top: 1px solid #334155; margin: 24px 0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🔒 Privacy Statement</h1>
+  <p class="updated">Universal API Monitor — Last updated: 2026</p>
+
+  <div class="highlight">
+    <strong>TL;DR:</strong> Wij bewaren <em>niets</em>.
+    Alles blijft in jouw browser of op jouw eigen toestel.
+  </div>
+
+  <h2>1. Wie zijn wij?</h2>
+  <p>
+    Universal API Monitor is een <strong>open-source, self-hosted</strong>
+    applicatie. Er is geen centrale server die jouw gegevens verzamelt.
+    Wanneer je deze applicatie gebruikt, draait alles op jouw eigen
+    computer, telefoon of ESP32.
+  </p>
+
+  <h2>2. Welke gegevens verzamelen wij?</h2>
+  <p><strong>Geen.</strong> Specifiek:</p>
+  <ul>
+    <li>❌ Geen cookies voor tracking</li>
+    <li>❌ Geen analytics (Google Analytics, Plausible, ...)</li>
+    <li>❌ Geen advertenties</li>
+    <li>❌ Geen user accounts</li>
+    <li>❌ Geen server-side logging van jouw requests</li>
+    <li>❌ Geen IP-adressen opslaan</li>
+  </ul>
+
+  <h2>3. Waar worden jouw gegevens bewaard?</h2>
+  <p>
+    Alle gegevens die jij invoert (API keys, URLs, configuratie)
+    worden <strong>uitsluitend lokaal</strong> bewaard:
+  </p>
+  <ul>
+    <li>🗄️ <strong>Browser localStorage</strong> — voor de webversie</li>
+    <li>🔧 <strong>ESP32 Preferences (flash)</strong> — voor de embedded versie</li>
+    <li>💾 <strong>Jouw eigen server</strong> — als je Flask zelf host</li>
+  </ul>
+  <p>
+    Deze gegevens verlaten jouw toestel <strong>nooit</strong> zonder
+    dat jij zelf een request verstuurt.
+  </p>
+
+  <h2>4. Wat gebeurt er als je een API aanroept?</h2>
+  <p>
+    Wanneer je op <strong>🚀 Send Request</strong> klikt, wordt een
+    HTTP-verzoek gestuurd naar <em>de URL die jij hebt ingevuld</em>.
+    Dat verzoek gaat rechtstreeks naar die API — niet via ons.
+  </p>
+  <ul>
+    <li>De API-provider ontvangt: jouw API key, URL en eventueel body</li>
+    <li>Wat die provider doet met jouw gegevens → zie hun eigen privacybeleid</li>
+    <li>Wij hebben <strong>geen</strong> toegang tot deze gegevens</li>
+  </ul>
+
+  <h2>5. CORS-proxy</h2>
+  <p>
+    Als jouw browser het verzoek blokkeert (CORS), biedt de app een
+    tweetal opties:
+  </p>
+  <ul>
+    <li>
+      <strong>Eigen Flask-proxy</strong> (<code>/api/proxy</code>) —
+      draait op <em>jouw</em> server, jouw gegevens blijven bij jou
+    </li>
+    <li>
+      <strong>Publieke proxy</strong> (<code>corsproxy.io</code>) —
+      optioneel; de derde partij ziet jouw verzoek. Gebruik dit enkel
+      voor niet-gevoelige testdoeleinden.
+    </li>
+  </ul>
+
+  <h2>6. API keys</h2>
+  <p>
+    Jouw API keys worden <strong>nooit</strong> naar ons gestuurd.
+    Ze worden:
+  </p>
+  <ul>
+    <li>✅ Opgeslagen in <code>localStorage</code> van jouw browser</li>
+    <li>✅ Verzonden naar de API die jij kiest (dat is het doel)</li>
+    <li>❌ <strong>Niet</strong> gelogd op de server</li>
+    <li>❌ <strong>Niet</strong> gedeeld met derden</li>
+  </ul>
+  <p>
+    <strong>Tip:</strong> gebruik waar mogelijk een beperkte key
+    (rate-limited of read-only) en verwijder keys die je niet meer nodig hebt.
+  </p>
+
+  <h2>7. Jouw rechten (GDPR / AVG)</h2>
+  <p>Omdat wij geen gegevens verzamelen, heb je in de praktijk:</p>
+  <ul>
+    <li>✅ Recht op inzage — alles staat in jouw browser, je kan het zien</li>
+    <li>✅ Recht op verwijdering — klik op "🗑️ Clear" of wis localStorage</li>
+    <li>✅ Recht op overdraagbaarheid — exporteer je log via "⬇️ Export"</li>
+    <li>✅ Recht op bezwaar — je kan de app op elk moment sluiten</li>
+  </ul>
+  <p>
+    Heb je toch vragen over GDPR? Neem contact op via de repository
+    waar je deze software vond.
+  </p>
+
+  <h2>8. Beveiliging</h2>
+  <ul>
+    <li>🔐 HTTPS aanbevolen voor alle API-verzoeken</li>
+    <li>🛡️ Keys worden niet in logs bewaard</li>
+    <li>🧹 Bij "Clear log" wordt de monitor-historiek gewist</li>
+    <li>💾 Bij het verwijderen van localStorage ben je volledig "vergeten"</li>
+  </ul>
+
+  <h2>9. Kinderen</h2>
+  <p>
+    Deze app is niet gericht op kinderen onder de 16 jaar en verzamelt
+    bewust geen gegevens van hen.
+  </p>
+
+  <h2>10. Wijzigingen</h2>
+  <p>
+    Wijzigingen aan deze privacyverklaring worden gepubliceerd op deze
+    pagina. De datum van de laatste wijziging staat bovenaan.
+  </p>
+
+  <h2>11. Contact</h2>
+  <p>
+    Voor vragen over privacy, open een issue op de GitHub-repository
+    waar je deze software hebt gevonden.
+  </p>
+
+  <hr>
+
+  <p style="text-align:center;color:#94a3b8;font-size:13px;">
+    🌈 <em>Privacy by design — geen data, geen zorgen.</em> ✨
+  </p>
+
+  <a class="back" href="/">← Terug naar de app</a>
+</div>
+</body>
+</html>
